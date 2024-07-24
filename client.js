@@ -4,7 +4,6 @@ const { createCanvas } = require('canvas');
 const fs = require('fs');
 const path = require('path');
 
-// Load the protobuf definition
 const PROTO_PATH = path.resolve(__dirname, 'mnist.proto');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
@@ -17,7 +16,6 @@ const mnistProto = grpc.loadPackageDefinition(packageDefinition).mnist;
 
 const client = new mnistProto.MNISTService('mnist-grpc-server:50051', grpc.credentials.createInsecure());
 
-// Define the output directory for the images
 const outputDir = path.resolve(__dirname, 'mnist_images');
 
 if (!fs.existsSync(outputDir)) {
