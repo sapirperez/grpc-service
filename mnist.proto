@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package mnist;
+
+service MNISTService {
+  rpc GetTrainingSamples (DataRequest) returns (stream Sample);
+}
+
+message DataRequest {}
+
+message Sample {
+  bytes image = 1;
+  int64 label = 2; 
+}
