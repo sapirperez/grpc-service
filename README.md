@@ -17,40 +17,50 @@ samples.
 
 ## Installation
 
-### Clone the Repository
-
 clone the repository to your local machine:
 
+```sh
 git clone https://github.com/sapirperez/grpc-service.git
-cd mnist-grpc-service
+
+cd grpc-service
+```
 
 
 ## Running on your local machine
 
 1. Install the necessary npm packages:
 
+```sh
 npm install
+```
 
 2. change client to connect to 'localhost:50051' instead 'mnist-grpc-server:50051'
 
 3. Running the Server
 
+```sh
 node server.js
+```
 
 4. Running the Client
 
+```sh
 node client.js
+```
 
 ## Docker Setup
 
 The Docker Compose configuration will build images for both the gRPC server and client.
 
+```sh
 docker-compose up --build
+```
 
 ## Testing
 
 1. Use any gRPC client to connect to localhost:50051 and call the GetTrainingSamples method
 2. client.js save the samples as images, check the folder
 3. Unit Testing with Jest - see getTrainingSamples.test file. 
-run with command: 
+```sh 
 npx jest getTrainingSamples.test.js
+```
