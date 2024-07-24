@@ -16,7 +16,7 @@ const mnistProto = grpc.loadPackageDefinition(packageDefinition).mnist;
 
 const client = new mnistProto.MNISTService('mnist-grpc-server:50051', grpc.credentials.createInsecure());
 
-const outputDir = path.resolve(__dirname, 'mnist_images');
+const outputDir = path.resolve(__dirname, 'mnist_digits');
 
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
